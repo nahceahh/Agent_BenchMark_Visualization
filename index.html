@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Benchmark Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="hero container">
+    <div class="badge">Scale AI 风格 · Agent Benchmark 可视化数据库</div>
+    <h1>Agent Benchmark Atlas</h1>
+    <p>聚合 SWE Bench Pro、Terminal Bench 2.0、Toolathlon、BrowseComp、Remote Labor Index、OSWorld-Verified 的关键信息：<strong>示例问题</strong>、<strong>工具环境</strong>、<strong>答案/验证器</strong>、<strong>原始题库</strong> 与 <strong>评测运行教程</strong>。</p>
+    <div class="search-wrap">
+      <input id="searchInput" type="search" placeholder="搜索 benchmark、任务、工具、验证方式..." />
+      <span id="resultCount"></span>
+    </div>
+  </header>
+
+  <main class="container" id="benchmarks"></main>
+
+  <footer class="container footer">
+    <p>数据来源：各 benchmark 官方仓库、论文页面或发布页面（见各卡片链接）。</p>
+  </footer>
+
+  <template id="benchmarkTemplate">
+    <section class="card">
+      <div class="card-header">
+        <h2></h2>
+        <p class="summary"></p>
+      </div>
+      <div class="meta-links">
+        <a class="dataset-link" target="_blank" rel="noopener">原始题库 / 官方链接</a>
+        <a class="tutorial-link" target="_blank" rel="noopener">运行评测教程</a>
+      </div>
+      <div class="runner-container"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>示例问题（3个）</th>
+              <th>工具与环境</th>
+              <th>答案 / 验证方式</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
